@@ -46,7 +46,7 @@ python main.py --api
 The server will be available at:
 
 ```
-https://srtmapi.onrender.com
+http://54.207.93.82:8000
 ```
 
 #### API Endpoint
@@ -79,7 +79,7 @@ POST /pyagro_elevations
 ```python
 import requests
 
-url = "https://srtmapi.onrender.com/pyagro_elevations"
+url = "http://54.207.93.82:8000/pyagro_elevations"
 
 payload = {
     "geometry": [
