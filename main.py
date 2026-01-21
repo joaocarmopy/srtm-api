@@ -8,6 +8,7 @@
 # ======================================#
 
 # ============== Imports ==============#
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from Orchestrator import Orchestrator
 from fastapi import FastAPI
@@ -65,6 +66,12 @@ orchestrator = Orchestrator(api=api, output_path=output_path)
 # ============== FastAPI app ==============#
 if api:
     app = FastAPI(title="SRTM Elevation API PYAgro")
+    app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"])
 
     @app.post("/pyagro_elevations")
     async def get_elevations(file: dict):
@@ -93,4 +100,5 @@ if __name__ == "__main__":
             uvicorn.run("main:app", host="0.0.0.0", port=port)
     else:
         run_cli()
+
 
