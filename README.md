@@ -46,7 +46,7 @@ python main.py --api
 The server will be available at:
 
 ```
-http://54.207.93.82:8000
+http://137.131.184.146
 ```
 
 #### API Endpoint
@@ -79,7 +79,7 @@ POST /pyagro_elevations
 ```python
 import requests
 
-url = "http://54.207.93.82:8000/pyagro_elevations"
+url = "http://137.131.184.146/pyagro_elevations"
 
 payload = {
     "geometry": [
